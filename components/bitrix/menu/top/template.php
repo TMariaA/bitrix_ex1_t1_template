@@ -11,9 +11,7 @@
                         </li>
                         <?
                         $previousLevel = 0;
-                        foreach ($arResult
-
-                        as $arItem): ?>
+                        foreach ($arResult as $arItem): ?>
 
                         <? if ($previousLevel && $arItem["DEPTH_LEVEL"] < $previousLevel):?>
                             <?= str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"])); ?>
@@ -21,17 +19,17 @@
 
                         <? if ($arItem["IS_PARENT"]): ?>
 
-                        <? if ($arItem["DEPTH_LEVEL"] == 1): ?>
+						<?// if ($arItem["DEPTH_LEVEL"] == 1): ?>
                         <li><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
                             <ul>
-                                <? else: ?>
-                                <li><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
-                                    <ul>
-                                        <? endif ?>
+								<?// else: ?>
+                                <!--<li><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
+                                    <ul>-->
+										<?// endif ?>
 
 
                                         <? if (isset($arItem["PARAMS"]["DESCRIPTION"])):?>
-                                            <?=$arItem["PARAMS"]["DESCRIPTION"]; ?><?= $arItem["TEXT"] ?>
+                                            <div class="menu-text"><?=$arItem["PARAMS"]["DESCRIPTION"]; ?><?= $arItem["TEXT"] ?></div>
                                         <? endif ?>
 
 
