@@ -22,7 +22,7 @@
                         <li><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
                             <ul>
                                         <? if (isset($arItem["PARAMS"]["DESCRIPTION"])):?>
-                                            <div class="menu-text"><?=$arItem["PARAMS"]["DESCRIPTION"]; ?><?= $arItem["TEXT"] ?></div>
+                                            <div class="menu-text"><?=$arItem["PARAMS"]["DESCRIPTION"]; ?></div>
                                         <? endif ?>
 
 
