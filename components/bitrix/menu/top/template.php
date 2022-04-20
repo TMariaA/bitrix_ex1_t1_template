@@ -19,15 +19,8 @@
 
                         <? if ($arItem["IS_PARENT"]): ?>
 
-						<?// if ($arItem["DEPTH_LEVEL"] == 1): ?>
                         <li><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
                             <ul>
-								<?// else: ?>
-                                <!--<li><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
-                                    <ul>-->
-										<?// endif ?>
-
-
                                         <? if (isset($arItem["PARAMS"]["DESCRIPTION"])):?>
                                             <div class="menu-text"><?=$arItem["PARAMS"]["DESCRIPTION"]; ?><?= $arItem["TEXT"] ?></div>
                                         <? endif ?>
@@ -36,13 +29,7 @@
                                         <? else:?>
 
                                             <? if ($arItem["PERMISSION"] > "D"):?>
-
-                                                <? if ($arItem["DEPTH_LEVEL"] == 1):?>
                                                     <li><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a></li>
-                                                <? else:?>
-                                                    <li><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a></li>
-                                                <? endif ?>
-
                                             <? else:?>
 
                                                 <? if ($arItem["DEPTH_LEVEL"] == 1):?>
