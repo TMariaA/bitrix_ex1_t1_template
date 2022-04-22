@@ -13,7 +13,8 @@
 $this->setFrameMode(true);
 $img = SITE_TEMPLATE_PATH . "/img/rew/no_photo.jpg";
 if (isset($arResult["DETAIL_PICTURE"]["SRC"])) {
-    $img = $arResult["DETAIL_PICTURE"]["SRC"];
+    $arImgComp = CFile::ResizeImageGet($arResult["DETAIL_PICTURE"]["ID"],Array("width"=>68,"height"=>50,BX_RESIZE_IMAGE_PROPORTIONAL,true));
+    $img = $arImgComp["src"];
 };
 ?>
 

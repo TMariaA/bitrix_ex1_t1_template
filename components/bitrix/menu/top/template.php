@@ -19,7 +19,9 @@
 
                         <? if ($arItem["IS_PARENT"]): ?>
 
-                        <li><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
+                        <li><a href="<?= $arItem["LINK"] ?>"  <?if (isset($arItem["PARAMS"]["COLOR"])){?>
+                            class="<?=$arItem["PARAMS"]["COLOR"]?>" <?
+                            }?> ><?= $arItem["TEXT"] ?></a>
                             <ul>
                                         <? if (isset($arItem["PARAMS"]["DESCRIPTION"])):?>
                                             <div class="menu-text"><?=$arItem["PARAMS"]["DESCRIPTION"]; ?></div>
