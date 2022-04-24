@@ -11,7 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-$img = SITE_TEMPLATE_PATH . "/img/rew/no_photo.jpg";
+$img = SITE_TEMPLATE_PATH . "/img/no_photo_left_block.jpg";
 ?>
 <? if ($arParams["DISPLAY_TOP_PAGER"]): ?>
     <?= $arResult["NAV_STRING"] ?><br/>
@@ -21,8 +21,9 @@ $img = SITE_TEMPLATE_PATH . "/img/rew/no_photo.jpg";
     $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
     $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
     ?>
-    <? if (isset($arItem["PREVIEW_PICTURE"]["SRC"])) {
-        $img = $arItem["PREVIEW_PICTURE"]["SRC"];
+    <? if (isset($arItem["DETAIL_PICTURE"]["SRC"])) {
+        $srcImg = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], Array("width"=>68,"height"=>50),BX_RESIZE_IMAGE_PROPORTIONAL);
+        $img = $srcImg["src"];
     }; ?>
     <div class="review-block" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
         <div class="review-text">

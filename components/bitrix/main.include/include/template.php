@@ -13,7 +13,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
-if($arResult["FILE"] <> ''):?>
+if($arResult["FILE"] <> '' and filesize($arResult["FILE"])>0):?>
 
     <div class="side-block side-anonse">
                                     <div class="title-block"><span class="i i-title01"></span><?=GetMessage("INFO")?>
@@ -22,6 +22,4 @@ if($arResult["FILE"] <> ''):?>
                                         <p><?include($arResult["FILE"]);?></p>
                                     </div>
                                 </div>
-<?else:?>
-    <?include($arResult["FILE"]);?>
 	<?endif;?>
